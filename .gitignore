@@ -7,3 +7,5 @@ data/
 metastore_db/
 derby.log
 spark-warehouse/
+sandbox/*.ipynb
+.ipynb_checkpoints/
