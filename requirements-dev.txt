@@ -1,0 +1,9 @@
+pyspark ==4.0.1
+delta-spark ==4.0.0
+pandas >=2.2
+numpy >=1.26
+pyarrow >=16
+scikit-learn >=1.5
+sqlalchemy >=2.0
+pytest >=8
+ruff >=0.6
