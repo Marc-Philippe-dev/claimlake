@@ -1,6 +1,7 @@
 """Module 2 checkpoint: no hard-coded builder, names from Settings."""
 
 from pathlib import Path
+
 from claimslake.platform import get_local_spark
 from claimslake.settings import Settings
 
