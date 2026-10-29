@@ -25,3 +25,12 @@ def test_settings_are_immutable():
     settings = Settings.databricks("workspace")
     with pytest.raises(FrozenInstanceError):
         settings.catalog = "prod"
+
+def test_schema_location_is_under_system():
+    settings = Settings.databricks("workspace")
+    expected = "/Volumes/workspace/ops/checkpoints/claims/_schema"
+    assert settings.schema_location("claims") == expected
+
+def test_parquet_fallback(monkeypatch):
+	monkeypatch.setenv("CLAIMSLAKE_TABLE_FORMAT", "parquet")
+	assert not Settings.local().use_delta

@@ -33,7 +33,10 @@ class Settings:
 
     def checkpoint(self, name: str) -> str:
         return f"{self.system}/{name}/_checkpoint"
-
+    
+    def schema_location(self , name: str):
+        return f"{self.system}/{name}/_schema"
+    
     @classmethod
     def local(cls, root: str | Path = "data") -> Settings:
         """Local profile, overridable with CLAIMSLAKE_* variables."""
