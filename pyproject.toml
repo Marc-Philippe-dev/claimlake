@@ -1,19 +1,17 @@
-[ project ]
-# Package name , used by pip and by the future wheel
-name = " claimslake "
-# Semantic versioning : MAJOR . MINOR . PATCH
+[project]
+# Package name, used by pip and by the future wheel
+name = "claimslake"
+# Semantic versioning: MAJOR.MINOR.PATCH
 version = "0.1.0"
 # pip refuses to install the project on an older Python
-requires-python = " >=3.10"
+requires-python = ">=3.10"
 
+[tool.pytest.ini_options]
+# Tests can `import claimslake` without installing the package
+pythonpath = ["src"]
+# pytest only looks for tests in tests/
+testpaths = ["tests"]
 
-[ tool.pytest.ini_options ]
-# Tests can ` import claimslake ` without installing the package
-pythonpath = [" src "]
-# pytest only looks for tests in tests /
-testpaths = [" tests "]
-
-
-[ tool.ruff ]
+[tool.ruff]
 # Default is 88; 100 suits long PySpark method chains
 line-length = 100
